@@ -57,3 +57,5 @@ Mateus Artur Santos
 - Rodada automatica de contribuicao #1 para fluxo de PR e issue.
 
 - Rodada automatica de contribuicao #2 para fluxo de PR e issue.
+
+- Rodada automatica de contribuicao #3 para fluxo de PR e issue.
