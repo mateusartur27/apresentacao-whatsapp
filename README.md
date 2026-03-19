@@ -39,6 +39,9 @@ Opcional:
 ## Objetivo academico
 Este material foi construido para estudo e apresentacao tecnica, com base em fontes publicas sobre arquitetura distribuida, engenharia de sistemas e processamento de eventos.
 
+## Atualizacao
+Melhoria de documentacao para fluxo de colaboracao via Pull Request.
+
 ## Tecnologias utilizadas
 - HTML5
 - CSS3
