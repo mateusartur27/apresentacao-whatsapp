@@ -1,0 +1,548 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 960" width="1800" height="960"
+     font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+
+  <defs>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000022"/>
+    </filter>
+    <filter id="shadow-sm" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000018"/>
+    </filter>
+    <!-- Arrow markers -->
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#607D8B"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1565C0"/>
+    </marker>
+    <marker id="arr-teal" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00695C"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#888888"/>
+    </marker>
+    <!-- Gradient backgrounds -->
+    <linearGradient id="grad-header" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#075E54"/>
+      <stop offset="50%"  stop-color="#128C7E"/>
+      <stop offset="100%" stop-color="#0D7A6A"/>
+    </linearGradient>
+    <linearGradient id="grad-footer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#111B21"/>
+      <stop offset="100%" stop-color="#1A2C35"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ════════════════════════════════════════════════════════
+       BACKGROUND
+  ═══════════════════════════════════════════════════════════ -->
+  <rect width="1800" height="960" fill="#F4F6F8"/>
+
+  <!-- ════════════════════════════════════════════════════════
+       HEADER BAR
+  ═══════════════════════════════════════════════════════════ -->
+  <rect width="1800" height="62" fill="url(#grad-header)"/>
+  <!-- WhatsApp logo circle -->
+  <circle cx="36" cy="31" r="18" fill="rgba(255,255,255,0.15)"/>
+  <text x="36" y="37" text-anchor="middle" font-size="18" fill="white">💬</text>
+  <!-- Title -->
+  <text x="900" y="24" text-anchor="middle" font-size="22" font-weight="700" fill="white" letter-spacing="0.5">
+    WhatsApp — Arquitetura de Sistema Completa (Modelo C4)
+  </text>
+  <text x="900" y="48" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.7)"
+        letter-spacing="0.3">
+    Erlang/OTP · Signal Protocol (E2E) · WebRTC · ScyllaDB · Kafka · CoTURN · CDN · APNs / FCM
+  </text>
+  <!-- Date badge -->
+  <rect x="1650" y="15" width="130" height="26" rx="13" fill="rgba(255,255,255,0.18)"/>
+  <text x="1715" y="32" text-anchor="middle" font-size="11" fill="white">Março 2026</text>
+
+  <!-- ════════════════════════════════════════════════════════
+       SECTION: CLIENTS (L1)
+  ═══════════════════════════════════════════════════════════ -->
+  <!-- Section background -->
+  <rect x="28" y="72" width="1744" height="118" rx="10" fill="#EBF5FB" stroke="#BBDEFB" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <!-- Section label -->
+  <rect x="42" y="72" width="220" height="20" rx="3" fill="#1565C0"/>
+  <text x="152" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="white" letter-spacing="0.5">
+    ● CAMADA DE CLIENTES (L1)
+  </text>
+
+  <!-- CLIENT BOX helper: x, y, w=200, h=80 -->
+  <!-- iOS Mobile -->
+  <rect x="136" y="96" width="370" height="84" rx="8" fill="white" stroke="#1565C0" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="136" y="96" width="370" height="24" rx="8" fill="#1565C0"/>
+  <rect x="136" y="108" width="370" height="12" rx="0" fill="#1565C0"/><!-- cap bottom -->
+  <text x="194" y="113" font-size="12" font-weight="700" fill="white">📱 iOS Mobile</text>
+  <text x="152" y="138" font-size="11" fill="#333">Runtime:</text>
+  <text x="152" y="153" font-size="11" fill="#555">Swift / Obj-C · libsignal (C++)</text>
+  <text x="152" y="168" font-size="10" fill="#888">SQLite local · APNs push · Signal E2E</text>
+
+  <!-- Android Mobile -->
+  <rect x="526" y="96" width="370" height="84" rx="8" fill="white" stroke="#1565C0" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="526" y="96" width="370" height="24" rx="8" fill="#1565C0"/>
+  <rect x="526" y="108" width="370" height="12" rx="0" fill="#1565C0"/>
+  <text x="584" y="113" font-size="12" font-weight="700" fill="white">📱 Android Mobile</text>
+  <text x="542" y="138" font-size="11" fill="#333">Runtime:</text>
+  <text x="542" y="153" font-size="11" fill="#555">Kotlin / Java · libsignal (C++)</text>
+  <text x="542" y="168" font-size="10" fill="#888">SQLite local · FCM push · Signal E2E</text>
+
+  <!-- WhatsApp Web -->
+  <rect x="916" y="96" width="370" height="84" rx="8" fill="white" stroke="#1565C0" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="916" y="96" width="370" height="24" rx="8" fill="#1565C0"/>
+  <rect x="916" y="108" width="370" height="12" rx="0" fill="#1565C0"/>
+  <text x="974" y="113" font-size="12" font-weight="700" fill="white">🖥️ WhatsApp Web</text>
+  <text x="932" y="138" font-size="11" fill="#333">Runtime:</text>
+  <text x="932" y="153" font-size="11" fill="#555">React · WebAssembly (libsignal-wasm)</text>
+  <text x="932" y="168" font-size="10" fill="#888">IndexedDB · Service Workers · PWA offline</text>
+
+  <!-- Desktop App -->
+  <rect x="1306" y="96" width="450" height="84" rx="8" fill="white" stroke="#1565C0" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="1306" y="96" width="450" height="24" rx="8" fill="#1565C0"/>
+  <rect x="1306" y="108" width="450" height="12" rx="0" fill="#1565C0"/>
+  <text x="1380" y="113" font-size="12" font-weight="700" fill="white">💻 Desktop App (Win / macOS / Linux)</text>
+  <text x="1322" y="138" font-size="11" fill="#333">Runtime:</text>
+  <text x="1322" y="153" font-size="11" fill="#555">Electron · React · Node.js · libsignal</text>
+  <text x="1322" y="168" font-size="10" fill="#888">IndexedDB local · mesma API WebSocket do Web</text>
+
+  <!-- Arrows CLIENT → EDGE -->
+  <line x1="321"  y1="180" x2="580"  y2="208" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-blue)" opacity="0.6"/>
+  <line x1="711"  y1="180" x2="780"  y2="208" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-blue)" opacity="0.6"/>
+  <line x1="1101" y1="180" x2="980"  y2="208" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-blue)" opacity="0.6"/>
+  <line x1="1531" y1="180" x2="1180" y2="208" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-blue)" opacity="0.6"/>
+  <!-- Arrow labels -->
+  <text x="900" y="204" text-anchor="middle" font-size="9" fill="#1565C0" font-style="italic">WebSocket (Noise) / HTTPS</text>
+
+  <!-- ════════════════════════════════════════════════════════
+       SECTION: EDGE / BORDER LAYER (L2)
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="28" y="208" width="1744" height="108" rx="10" fill="#FFF8EE" stroke="#FFE0B2" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="42" y="208" width="190" height="20" rx="3" fill="#E65100"/>
+  <text x="137" y="222" text-anchor="middle" font-size="11" font-weight="700" fill="white" letter-spacing="0.5">
+    ● BORDA / EDGE (L2)
+  </text>
+
+  <!-- DNS Anycast -->
+  <rect x="86" y="232" width="340" height="74" rx="8" fill="white" stroke="#E65100" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="86" y="232" width="340" height="22" rx="8" fill="#E65100"/>
+  <rect x="86" y="242" width="340" height="12" rx="0" fill="#E65100"/>
+  <text x="156" y="248" font-size="12" font-weight="700" fill="white">🌍 DNS Anycast / GeoDNS</text>
+  <text x="102" y="270" font-size="11" fill="#555">Roteamento geográfico MSP (Meta)</text>
+  <text x="102" y="285" font-size="10" fill="#888">Resolve para PoP mais próximo · TTL 60s</text>
+  <text x="102" y="299" font-size="10" fill="#888">30+ PoPs globais (SP · Ashburn · Frankfurt · Singapore)</text>
+
+  <!-- HAProxy -->
+  <rect x="456" y="232" width="370" height="74" rx="8" fill="white" stroke="#E65100" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="456" y="232" width="370" height="22" rx="8" fill="#E65100"/>
+  <rect x="456" y="242" width="370" height="12" rx="0" fill="#E65100"/>
+  <text x="538" y="248" font-size="12" font-weight="700" fill="white">⚖️ HAProxy — Load Balancer L4</text>
+  <text x="472" y="270" font-size="11" fill="#555">Balanceamento TCP · TLS 1.3 offload</text>
+  <text x="472" y="285" font-size="10" fill="#888">Health checks · Failover automático</text>
+  <text x="472" y="299" font-size="10" fill="#888">Session affinity para WebSocket</text>
+
+  <!-- Nginx / API GW -->
+  <rect x="856" y="232" width="370" height="74" rx="8" fill="white" stroke="#E65100" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="856" y="232" width="370" height="22" rx="8" fill="#E65100"/>
+  <rect x="856" y="242" width="370" height="12" rx="0" fill="#E65100"/>
+  <text x="942" y="248" font-size="12" font-weight="700" fill="white">🔀 Nginx — API Gateway L7</text>
+  <text x="872" y="270" font-size="11" fill="#555">Rate limiting · Auth header · Routing</text>
+  <text x="872" y="285" font-size="10" fill="#888">SSL termination · HTTP/2 · QUIC (experimental)</text>
+  <text x="872" y="299" font-size="10" fill="#888">Upgrade: WebSocket → Chat Server</text>
+
+  <!-- CoTURN (edge for VoIP) -->
+  <rect x="1256" y="232" width="490" height="74" rx="8" fill="white" stroke="#E65100" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="1256" y="232" width="490" height="22" rx="8" fill="#E65100"/>
+  <rect x="1256" y="242" width="490" height="12" rx="0" fill="#E65100"/>
+  <text x="1354" y="248" font-size="12" font-weight="700" fill="white">📡 CoTURN — STUN / TURN Relay Server</text>
+  <text x="1272" y="270" font-size="11" fill="#555">STUN: descobre IP público (NAT traversal)</text>
+  <text x="1272" y="285" font-size="10" fill="#888">TURN relay: quando P2P bloqueado por firewall</text>
+  <text x="1272" y="299" font-size="10" fill="#888">ICE Trickle · Geolocalizado nos PoPs · UDP + TCP</text>
+
+  <!-- Arrows EDGE → BACKEND -->
+  <line x1="641" y1="306" x2="641" y2="328" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)" opacity="0.5"/>
+  <line x1="1041" y1="306" x2="1041" y2="328" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)" opacity="0.5"/>
+
+  <!-- ════════════════════════════════════════════════════════
+       BACKEND FRAME
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="28" y="326" width="1744" height="406" rx="10" fill="#FAFAFA" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="8,4" filter="url(#shadow-sm)"/>
+  <rect x="42" y="326" width="228" height="20" rx="3" fill="#37474F"/>
+  <text x="156" y="340" text-anchor="middle" font-size="11" font-weight="700" fill="white" letter-spacing="0.5">
+    ● BACKEND — PROCESSAMENTO
+  </text>
+
+  <!-- ─── DOMAIN: Chat & Messaging ─── -->
+  <rect x="44" y="350" width="688" height="216" rx="8" fill="#E0F2F1" stroke="#00695C" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="44" y="350" width="688" height="22" rx="8" fill="#00695C"/>
+  <rect x="44" y="360" width="688" height="12" rx="0" fill="#00695C"/>
+  <text x="60" y="366" font-size="12" font-weight="700" fill="white">⚙️ Chat &amp; Messaging  (Erlang/OTP · BEAM VM · Ejabberd · FreeBSD)</text>
+
+  <!-- component mini-boxes — row 1 -->
+  <!-- Chat Server -->
+  <rect x="56" y="378" width="204" height="80" rx="6" fill="white" stroke="#00695C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="56" y="378" width="204" height="18" rx="6" fill="#004D40"/>
+  <rect x="56" y="388" width="204" height="8" rx="0" fill="#004D40"/>
+  <text x="68" y="391" font-size="11" font-weight="700" fill="white">Chat Server (Pool Erlang)</text>
+  <text x="68" y="410" font-size="10" fill="#333">GenServer por conexão</text>
+  <text x="68" y="423" font-size="10" fill="#555">1M+ conex./nó · mailbox própria</text>
+  <text x="68" y="436" font-size="10" fill="#777">Supervisor tree · hot code upgrade</text>
+  <text x="68" y="449" font-size="10" fill="#777">Heartbeat WSS 30s</text>
+
+  <!-- Message Router -->
+  <rect x="272" y="378" width="204" height="80" rx="6" fill="white" stroke="#00695C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="272" y="378" width="204" height="18" rx="6" fill="#004D40"/>
+  <rect x="272" y="388" width="204" height="8" rx="0" fill="#004D40"/>
+  <text x="284" y="391" font-size="11" font-weight="700" fill="white">Message Router</text>
+  <text x="284" y="410" font-size="10" fill="#333">Localiza nó Erlang do dest.</text>
+  <text x="284" y="423" font-size="10" fill="#555">Mnesia routing table</text>
+  <text x="284" y="436" font-size="10" fill="#777">Entrega direta P2P ou fila</text>
+  <text x="284" y="449" font-size="10" fill="#777">Multi-device dispatch</text>
+
+  <!-- Presence Manager -->
+  <rect x="488" y="378" width="232" height="80" rx="6" fill="white" stroke="#00695C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="488" y="378" width="232" height="18" rx="6" fill="#004D40"/>
+  <rect x="488" y="388" width="232" height="8" rx="0" fill="#004D40"/>
+  <text x="500" y="391" font-size="11" font-weight="700" fill="white">Presence Manager</text>
+  <text x="500" y="410" font-size="10" fill="#333">Online / Offline / Digitando...</text>
+  <text x="500" y="423" font-size="10" fill="#555">Memcached cache de estado</text>
+  <text x="500" y="436" font-size="10" fill="#777">Pub/Sub por contato</text>
+  <text x="500" y="449" font-size="10" fill="#777">Última vez visto (privacidade)</text>
+
+  <!-- row 2 -->
+  <!-- Receipt Engine -->
+  <rect x="56" y="468" width="204" height="80" rx="6" fill="white" stroke="#00695C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="56" y="468" width="204" height="18" rx="6" fill="#004D40"/>
+  <rect x="56" y="478" width="204" height="8" rx="0" fill="#004D40"/>
+  <text x="68" y="481" font-size="11" font-weight="700" fill="white">Receipt Engine</text>
+  <text x="68" y="500" font-size="10" fill="#333">ACK ✓ enviado / ✓✓ entregue</text>
+  <text x="68" y="513" font-size="10" fill="#555">✓✓ azul = lido pelo destinatário</text>
+  <text x="68" y="526" font-size="10" fill="#777">Receipt de grupos (broadcast)</text>
+  <text x="68" y="539" font-size="10" fill="#777">Kafka event: msg.delivered</text>
+
+  <!-- Group Manager -->
+  <rect x="272" y="468" width="204" height="80" rx="6" fill="white" stroke="#00695C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="272" y="468" width="204" height="18" rx="6" fill="#004D40"/>
+  <rect x="272" y="478" width="204" height="8" rx="0" fill="#004D40"/>
+  <text x="284" y="481" font-size="11" font-weight="700" fill="white">Group Manager</text>
+  <text x="284" y="500" font-size="10" fill="#333">Metadados de grupo (Mnesia)</text>
+  <text x="284" y="513" font-size="10" fill="#555">Lista de membros + admin</text>
+  <text x="284" y="526" font-size="10" fill="#777">Broadcast de mensagem</text>
+  <text x="284" y="539" font-size="10" fill="#777">Max 1024 participantes</text>
+
+  <!-- Sync Engine -->
+  <rect x="488" y="468" width="232" height="80" rx="6" fill="white" stroke="#00695C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="488" y="468" width="232" height="18" rx="6" fill="#004D40"/>
+  <rect x="488" y="478" width="232" height="8" rx="0" fill="#004D40"/>
+  <text x="500" y="481" font-size="11" font-weight="700" fill="white">Sync Engine (Multi-device)</text>
+  <text x="500" y="500" font-size="10" fill="#333">Histórico criptografado entre devs</text>
+  <text x="500" y="513" font-size="10" fill="#555">Identity key por dispositivo</text>
+  <text x="500" y="526" font-size="10" fill="#777">Reconciliação de mensagens</text>
+  <text x="500" y="539" font-size="10" fill="#777">Delega para telefone como primary</text>
+
+  <!-- ─── DOMAIN: Auth & Security ─── -->
+  <rect x="744" y="350" width="260" height="216" rx="8" fill="#FFEBEE" stroke="#B71C1C" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="744" y="350" width="260" height="22" rx="8" fill="#B71C1C"/>
+  <rect x="744" y="360" width="260" height="12" rx="0" fill="#B71C1C"/>
+  <text x="758" y="366" font-size="12" font-weight="700" fill="white">🔐 Auth &amp; Security</text>
+
+  <!-- Auth Service -->
+  <rect x="756" y="378" width="236" height="62" rx="6" fill="white" stroke="#B71C1C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="756" y="378" width="236" height="18" rx="6" fill="#7F0000"/>
+  <rect x="756" y="388" width="236" height="8" rx="0" fill="#7F0000"/>
+  <text x="768" y="391" font-size="11" font-weight="700" fill="white">Auth Service</text>
+  <text x="768" y="410" font-size="10" fill="#333">OTP via SMS / voz (Sinch)</text>
+  <text x="768" y="423" font-size="10" fill="#555">Sessão JWT · token refresh</text>
+  <text x="768" y="435" font-size="10" fill="#777">2FA / passkey suporte</text>
+
+  <!-- Signal Protocol E2E -->
+  <rect x="756" y="450" width="236" height="62" rx="6" fill="white" stroke="#B71C1C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="756" y="450" width="236" height="18" rx="6" fill="#7F0000"/>
+  <rect x="756" y="460" width="236" height="8" rx="0" fill="#7F0000"/>
+  <text x="768" y="463" font-size="11" font-weight="700" fill="white">Signal Protocol (E2E Encrypt.)</text>
+  <text x="768" y="482" font-size="10" fill="#333">X3DH handshake inicial</text>
+  <text x="768" y="495" font-size="10" fill="#555">Double Ratchet (PFS)</text>
+  <text x="768" y="507" font-size="10" fill="#777">AES-256-GCM + HMAC-SHA256</text>
+
+  <!-- KDC -->
+  <rect x="756" y="522" width="236" height="38" rx="6" fill="white" stroke="#B71C1C" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="756" y="522" width="236" height="18" rx="6" fill="#7F0000"/>
+  <rect x="756" y="532" width="236" height="8" rx="0" fill="#7F0000"/>
+  <text x="768" y="535" font-size="11" font-weight="700" fill="white">KDC — Key Distribution Center</text>
+  <text x="768" y="552" font-size="10" fill="#333">Armazena pre-keys públicas · Curve25519</text>
+
+  <!-- ─── DOMAIN: Media Service ─── -->
+  <rect x="1016" y="350" width="236" height="216" rx="8" fill="#EFEBE9" stroke="#4E342E" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="1016" y="350" width="236" height="22" rx="8" fill="#4E342E"/>
+  <rect x="1016" y="360" width="236" height="12" rx="0" fill="#4E342E"/>
+  <text x="1030" y="366" font-size="12" font-weight="700" fill="white">📷 Media Service</text>
+
+  <rect x="1028" y="378" width="212" height="78" rx="6" fill="white" stroke="#4E342E" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1028" y="378" width="212" height="18" rx="6" fill="#3E2723"/>
+  <rect x="1028" y="388" width="212" height="8" rx="0" fill="#3E2723"/>
+  <text x="1040" y="391" font-size="11" font-weight="700" fill="white">Media Orchestrator</text>
+  <text x="1040" y="410" font-size="10" fill="#333">Pre-signed URLs (PUT/GET)</text>
+  <text x="1040" y="423" font-size="10" fill="#555">Upload direto ao CDN/Haystack</text>
+  <text x="1040" y="436" font-size="10" fill="#777">TTL 5min upload · 1h download</text>
+  <text x="1040" y="449" font-size="10" fill="#777">Verificação SHA-256 integridade</text>
+
+  <rect x="1028" y="466" width="212" height="90" rx="6" fill="white" stroke="#4E342E" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1028" y="466" width="212" height="18" rx="6" fill="#3E2723"/>
+  <rect x="1028" y="476" width="212" height="8" rx="0" fill="#3E2723"/>
+  <text x="1040" y="479" font-size="11" font-weight="700" fill="white">Media Processor (FFmpeg)</text>
+  <text x="1040" y="498" font-size="10" fill="#333">Compressão WebP (imagens)</text>
+  <text x="1040" y="511" font-size="10" fill="#555">Transcodificação H.264/VP9</text>
+  <text x="1040" y="524" font-size="10" fill="#777">Thumbnail gerado localmente</text>
+  <text x="1040" y="537" font-size="10" fill="#777">AES-256-CBC no device (E2E)</text>
+  <text x="1040" y="550" font-size="10" fill="#777">AAC para notas de voz</text>
+
+  <!-- ─── DOMAIN: Voice & Video ─── -->
+  <rect x="1264" y="350" width="240" height="216" rx="8" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="1264" y="350" width="240" height="22" rx="8" fill="#6A1B9A"/>
+  <rect x="1264" y="360" width="240" height="12" rx="0" fill="#6A1B9A"/>
+  <text x="1278" y="366" font-size="12" font-weight="700" fill="white">📞 Voice &amp; Video (WebRTC)</text>
+
+  <rect x="1276" y="378" width="216" height="90" rx="6" fill="white" stroke="#6A1B9A" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1276" y="378" width="216" height="18" rx="6" fill="#4A148C"/>
+  <rect x="1276" y="388" width="216" height="8" rx="0" fill="#4A148C"/>
+  <text x="1288" y="391" font-size="11" font-weight="700" fill="white">Signaling Server (SIP/WebRTC)</text>
+  <text x="1288" y="410" font-size="10" fill="#333">CALL_INVITE / ACCEPT / END</text>
+  <text x="1288" y="423" font-size="10" fill="#555">SDP Offer/Answer via WSS</text>
+  <text x="1288" y="436" font-size="10" fill="#777">ICE candidate exchange</text>
+  <text x="1288" y="449" font-size="10" fill="#777">SFU para grupos &gt; 4 pessoas</text>
+  <text x="1288" y="460" font-size="10" fill="#777">Codecs: Opus 32kbps / VP9 / H.264</text>
+
+  <rect x="1276" y="478" width="216" height="80" rx="6" fill="white" stroke="#6A1B9A" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1276" y="478" width="216" height="18" rx="6" fill="#4A148C"/>
+  <rect x="1276" y="488" width="216" height="8" rx="0" fill="#4A148C"/>
+  <text x="1288" y="491" font-size="11" font-weight="700" fill="white">DTLS + SRTP Stream (E2E)</text>
+  <text x="1288" y="510" font-size="10" fill="#333">DTLS handshake: chaves efêmeras</text>
+  <text x="1288" y="523" font-size="10" fill="#555">SRTP: stream áudio/vídeo cifrado</text>
+  <text x="1288" y="536" font-size="10" fill="#777">P2P direto quando possível</text>
+  <text x="1288" y="549" font-size="10" fill="#777">Relay TURN quando bloqueado</text>
+
+  <!-- ─── DOMAIN: Notifications ─── -->
+  <rect x="1516" y="350" width="244" height="216" rx="8" fill="#E1F5FE" stroke="#0277BD" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="1516" y="350" width="244" height="22" rx="8" fill="#0277BD"/>
+  <rect x="1516" y="360" width="244" height="12" rx="0" fill="#0277BD"/>
+  <text x="1530" y="366" font-size="12" font-weight="700" fill="white">🔔 Notifications</text>
+
+  <rect x="1528" y="378" width="220" height="78" rx="6" fill="white" stroke="#0277BD" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1528" y="378" width="220" height="18" rx="6" fill="#01579B"/>
+  <rect x="1528" y="388" width="220" height="8" rx="0" fill="#01579B"/>
+  <text x="1540" y="391" font-size="11" font-weight="700" fill="white">Notification Dispatcher</text>
+  <text x="1540" y="410" font-size="10" fill="#333">Detecta usuário offline</text>
+  <text x="1540" y="423" font-size="10" fill="#555">Publica evento no Kafka</text>
+  <text x="1540" y="436" font-size="10" fill="#777">Retry policy (3x expon. backoff)</text>
+  <text x="1540" y="449" font-size="10" fill="#777">Prioridade por tipo de msg</text>
+
+  <rect x="1528" y="466" width="220" height="90" rx="6" fill="white" stroke="#0277BD" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1528" y="466" width="220" height="18" rx="6" fill="#01579B"/>
+  <rect x="1528" y="476" width="220" height="8" rx="0" fill="#01579B"/>
+  <text x="1540" y="479" font-size="11" font-weight="700" fill="white">Push Router</text>
+  <text x="1540" y="498" font-size="10" fill="#333">iOS → APNs (Apple)</text>
+  <text x="1540" y="511" font-size="10" fill="#555">Android → FCM (Firebase)</text>
+  <text x="1540" y="524" font-size="10" fill="#777">Acorda app no background</text>
+  <text x="1540" y="537" font-size="10" fill="#777">Drain fila ScyllaDB ao conectar</text>
+  <text x="1540" y="550" font-size="10" fill="#777">Token push atualizado via WSS</text>
+
+  <!-- ─── DATA LAYER ─── -->
+  <rect x="44" y="578" width="1716" height="144" rx="8" fill="#E8EAF6" stroke="#283593" stroke-width="2" filter="url(#shadow-sm)"/>
+  <rect x="44" y="578" width="190" height="20" rx="3" fill="#283593"/>
+  <text x="139" y="592" text-anchor="middle" font-size="11" font-weight="700" fill="white" letter-spacing="0.4">
+    ● DATA LAYER
+  </text>
+
+  <!-- 6 data boxes — centered in width 1716, each w=242, gap=28 -->
+  <!-- total = 6*242 + 5*28 = 1452+140 = 1592, start = 44+(1716-1592)/2 = 44+62 = 106 -->
+  <!-- Mnesia -->
+  <rect x="106" y="602" width="242" height="110" rx="8" fill="white" stroke="#283593" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="106" y="602" width="242" height="22" rx="8" fill="#1A237E"/>
+  <rect x="106" y="614" width="242" height="10" rx="0" fill="#1A237E"/>
+  <text x="118" y="618" font-size="11" font-weight="700" fill="white">🗃 Mnesia  (Erlang nativo)</text>
+  <text x="118" y="642" font-size="11" fill="#333">Sessões de usuário</text>
+  <text x="118" y="657" font-size="10" fill="#555">Tabelas de roteamento</text>
+  <text x="118" y="672" font-size="10" fill="#777">Metadata de grupo</text>
+  <text x="118" y="687" font-size="10" fill="#777">Distribuído com Erlang cluster</text>
+  <text x="118" y="702" font-size="10" fill="#888">In-memory + disk_copies</text>
+
+  <!-- ScyllaDB -->
+  <rect x="376" y="602" width="242" height="110" rx="8" fill="white" stroke="#283593" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="376" y="602" width="242" height="22" rx="8" fill="#1A237E"/>
+  <rect x="376" y="614" width="242" height="10" rx="0" fill="#1A237E"/>
+  <text x="388" y="618" font-size="11" font-weight="700" fill="white">📊 ScyllaDB  (wide-column)</text>
+  <text x="388" y="642" font-size="11" fill="#333">Fila offline (msgs p/ user off.)</text>
+  <text x="388" y="657" font-size="10" fill="#555">Compatível Cassandra (CQL)</text>
+  <text x="388" y="672" font-size="10" fill="#777">C++ → p99 &lt; 5ms · sem GC</text>
+  <text x="388" y="687" font-size="10" fill="#777">Replicação fator 3 · QUORUM</text>
+  <text x="388" y="702" font-size="10" fill="#888">TTL automático · write-heavy</text>
+
+  <!-- Object Store / Haystack -->
+  <rect x="646" y="602" width="242" height="110" rx="8" fill="white" stroke="#283593" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="646" y="602" width="242" height="22" rx="8" fill="#1A237E"/>
+  <rect x="646" y="614" width="242" height="10" rx="0" fill="#1A237E"/>
+  <text x="658" y="618" font-size="11" font-weight="700" fill="white">🗄 Object Store (Haystack)</text>
+  <text x="658" y="642" font-size="11" fill="#333">Blobs de mídia criptografada</text>
+  <text x="658" y="657" font-size="10" fill="#555">Fotos · vídeos · docs · áudio</text>
+  <text x="658" y="672" font-size="10" fill="#777">Redundância geográfica 3x</text>
+  <text x="658" y="687" font-size="10" fill="#777">Acesso via pre-signed URL</text>
+  <text x="658" y="702" font-size="10" fill="#888">GC automático após TTL</text>
+
+  <!-- Memcached -->
+  <rect x="916" y="602" width="242" height="110" rx="8" fill="white" stroke="#283593" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="916" y="602" width="242" height="22" rx="8" fill="#1A237E"/>
+  <rect x="916" y="614" width="242" height="10" rx="0" fill="#1A237E"/>
+  <text x="928" y="618" font-size="11" font-weight="700" fill="white">⚡ Memcached  (in-memory cache)</text>
+  <text x="928" y="642" font-size="11" fill="#333">Presença de usuário (online/off)</text>
+  <text x="928" y="657" font-size="10" fill="#555">Rotas de roteamento de msg</text>
+  <text x="928" y="672" font-size="10" fill="#777">Session cache · token cache</text>
+  <text x="928" y="687" font-size="10" fill="#777">Cluster distribuído · eviction LRU</text>
+  <text x="928" y="702" font-size="10" fill="#888">Sub-milissegundo latência</text>
+
+  <!-- ZooKeeper -->
+  <rect x="1186" y="602" width="242" height="110" rx="8" fill="white" stroke="#283593" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1186" y="602" width="242" height="22" rx="8" fill="#1A237E"/>
+  <rect x="1186" y="614" width="242" height="10" rx="0" fill="#1A237E"/>
+  <text x="1198" y="618" font-size="11" font-weight="700" fill="white">🔧 ZooKeeper  (coord. distr.)</text>
+  <text x="1198" y="642" font-size="11" fill="#333">Coordenação Erlang cluster</text>
+  <text x="1198" y="657" font-size="10" fill="#555">Leader election entre nós</text>
+  <text x="1198" y="672" font-size="10" fill="#777">Service discovery</text>
+  <text x="1198" y="687" font-size="10" fill="#777">Config distribuída</text>
+  <text x="1198" y="702" font-size="10" fill="#888">ZAB consensus protocol</text>
+
+  <!-- Kafka -->
+  <rect x="1456" y="602" width="298" height="110" rx="8" fill="white" stroke="#283593" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1456" y="602" width="298" height="22" rx="8" fill="#1A237E"/>
+  <rect x="1456" y="614" width="298" height="10" rx="0" fill="#1A237E"/>
+  <text x="1468" y="618" font-size="11" font-weight="700" fill="white">📨 Apache Kafka  (event streaming)</text>
+  <text x="1468" y="642" font-size="11" fill="#333">Eventos de mensagem (msg.sent/del.)</text>
+  <text x="1468" y="657" font-size="10" fill="#555">Receipts assíncronos</text>
+  <text x="1468" y="672" font-size="10" fill="#777">Analytics · auditoria · ML pipeline</text>
+  <text x="1468" y="687" font-size="10" fill="#777">Retenção 7 dias · particionado por JID</text>
+  <text x="1468" y="702" font-size="10" fill="#888">Consumer: Notifications, Analytics, ML</text>
+
+  <!-- Arrows backend → data -->
+  <line x1="380" y1="570" x2="380" y2="600" stroke="#283593" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)" opacity="0.5"/>
+  <line x1="874" y1="570" x2="874" y2="600" stroke="#283593" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)" opacity="0.5"/>
+  <line x1="1134" y1="570" x2="1134" y2="600" stroke="#283593" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)" opacity="0.5"/>
+
+  <!-- ════════════════════════════════════════════════════════
+       EXTERNAL SYSTEMS
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="28" y="742" width="1744" height="142" rx="10" fill="#F5F5F5" stroke="#9E9E9E" stroke-width="1.5" stroke-dasharray="6,4" filter="url(#shadow-sm)"/>
+  <rect x="42" y="742" width="214" height="20" rx="3" fill="#546E7A"/>
+  <text x="149" y="756" text-anchor="middle" font-size="11" font-weight="700" fill="white" letter-spacing="0.4">
+    ● SISTEMAS EXTERNOS
+  </text>
+
+  <!-- 6 external boxes, each w=260, gap=30 -->
+  <!-- total = 6*260+5*30 = 1710, start = 28+(1744-1710)/2 = 45 -->
+  <!-- APNs -->
+  <rect x="45" y="766" width="260" height="108" rx="8" fill="white" stroke="#1B5E20" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="45" y="766" width="260" height="22" rx="8" fill="#1B5E20"/>
+  <rect x="45" y="778" width="260" height="10" rx="0" fill="#1B5E20"/>
+  <text x="57" y="782" font-size="12" font-weight="700" fill="white"> APNs — Apple Push Notifications</text>
+  <text x="57" y="804" font-size="11" fill="#333">Push para iOS / iPadOS / macOS</text>
+  <text x="57" y="819" font-size="10" fill="#555">Certificate-based auth · TLS mTLS</text>
+  <text x="57" y="834" font-size="10" fill="#777">Payload criptografado (silent push)</text>
+  <text x="57" y="849" font-size="10" fill="#888">Protocolo HTTP/2 binário</text>
+  <text x="57" y="863" font-size="10" fill="#888">Prioridade: high (call) / normal (msg)</text>
+
+  <!-- FCM -->
+  <rect x="335" y="766" width="260" height="108" rx="8" fill="white" stroke="#E65100" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="335" y="766" width="260" height="22" rx="8" fill="#E65100"/>
+  <rect x="335" y="778" width="260" height="10" rx="0" fill="#E65100"/>
+  <text x="347" y="782" font-size="12" font-weight="700" fill="white"> FCM — Firebase Cloud Messaging</text>
+  <text x="347" y="804" font-size="11" fill="#333">Push para Android / WearOS</text>
+  <text x="347" y="819" font-size="10" fill="#555">Server key auth · HTTP/2 API</text>
+  <text x="347" y="834" font-size="10" fill="#777">Data message (silent) + notification</text>
+  <text x="347" y="849" font-size="10" fill="#888">FCM quota limits gerenciados</text>
+  <text x="347" y="863" font-size="10" fill="#888">Batch de notificações por device</text>
+
+  <!-- Telecom / SMS OTP -->
+  <rect x="625" y="766" width="260" height="108" rx="8" fill="white" stroke="#0D47A1" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="625" y="766" width="260" height="22" rx="8" fill="#0D47A1"/>
+  <rect x="625" y="778" width="260" height="10" rx="0" fill="#0D47A1"/>
+  <text x="637" y="782" font-size="12" font-weight="700" fill="white"> Telecom — SMS / Voz OTP</text>
+  <text x="637" y="804" font-size="11" fill="#333">Verificação de número (registro)</text>
+  <text x="637" y="819" font-size="10" fill="#555">Parceiro: Sinch / Twilio</text>
+  <text x="637" y="834" font-size="10" fill="#777">OTP 6 dígitos · TTL 10 min</text>
+  <text x="637" y="849" font-size="10" fill="#888">Fallback: chamada de voz TTS</text>
+  <text x="637" y="863" font-size="10" fill="#888">Anti-fraud: max 3 tentativas</text>
+
+  <!-- CDN Global -->
+  <rect x="915" y="766" width="260" height="108" rx="8" fill="white" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="915" y="766" width="260" height="22" rx="8" fill="#F57F17"/>
+  <rect x="915" y="778" width="260" height="10" rx="0" fill="#F57F17"/>
+  <text x="927" y="782" font-size="12" font-weight="700" fill="white"> CDN Global — Distribuição de Mídia</text>
+  <text x="927" y="804" font-size="11" fill="#333">Entrega fotos/vídeos/docs</text>
+  <text x="927" y="819" font-size="10" fill="#555">Akamai + Meta Edge Network</text>
+  <text x="927" y="834" font-size="10" fill="#777">Cache edge (ciphertext) global</text>
+  <text x="927" y="849" font-size="10" fill="#888">Pre-signed URL com TTL</text>
+  <text x="927" y="863" font-size="10" fill="#888">30+ PoPs · baixa latência global</text>
+
+  <!-- Meta Platform -->
+  <rect x="1205" y="766" width="260" height="108" rx="8" fill="white" stroke="#4527A0" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1205" y="766" width="260" height="22" rx="8" fill="#4527A0"/>
+  <rect x="1205" y="778" width="260" height="10" rx="0" fill="#4527A0"/>
+  <text x="1217" y="782" font-size="12" font-weight="700" fill="white"> Meta Platform (Infra Compartilhada)</text>
+  <text x="1217" y="804" font-size="11" fill="#333">Data Centers (Altoona IA · Forest City)</text>
+  <text x="1217" y="819" font-size="10" fill="#555">Scuba / Hive / ODS — analytics</text>
+  <text x="1217" y="834" font-size="10" fill="#777">Buck build · Tupperware orq.</text>
+  <text x="1217" y="849" font-size="10" fill="#888">Meta AI integration (experimental)</text>
+  <text x="1217" y="863" font-size="10" fill="#888">ZooKeeper · Kafka cluster global</text>
+
+  <!-- Telecom BACKUP SYSTEM (Internet/Carriers) -->
+  <rect x="1495" y="766" width="260" height="108" rx="8" fill="white" stroke="#455A64" stroke-width="1.5" filter="url(#shadow-sm)"/>
+  <rect x="1495" y="766" width="260" height="22" rx="8" fill="#455A64"/>
+  <rect x="1495" y="778" width="260" height="10" rx="0" fill="#455A64"/>
+  <text x="1507" y="782" font-size="12" font-weight="700" fill="white"> Usuários Globais — Internet</text>
+  <text x="1507" y="804" font-size="11" fill="#333">2 bilhões de usuários ativos</text>
+  <text x="1507" y="819" font-size="10" fill="#555">Mobile 4G/5G · WiFi · Fibra</text>
+  <text x="1507" y="834" font-size="10" fill="#777">Protocolo: WSS + HTTPS + WebRTC</text>
+  <text x="1507" y="849" font-size="10" fill="#888">100 bilhões de msgs/dia</text>
+  <text x="1507" y="863" font-size="10" fill="#888">Disponibilidade: 99.99% SLA</text>
+
+  <!-- Arrows: Notifications → APNs / FCM -->
+  <line x1="1638" y1="566" x2="1638" y2="590" stroke="#0277BD" stroke-width="1" stroke-dasharray="4,3" opacity="0.4" marker-end="url(#arr)"/>
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <rect x="0" y="882" width="1800" height="78" fill="url(#grad-footer)"/>
+  <!-- Legend -->
+  <text x="36" y="902" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)">Legenda de Domínios:</text>
+  <!-- Color squares + labels -->
+  <rect x="36"   y="912" width="12" height="12" rx="2" fill="#00695C"/>
+  <text x="54"   y="922" font-size="10" fill="rgba(255,255,255,0.7)">Chat &amp; Messaging</text>
+  <rect x="170"  y="912" width="12" height="12" rx="2" fill="#B71C1C"/>
+  <text x="188"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Auth &amp; Security</text>
+  <rect x="296"  y="912" width="12" height="12" rx="2" fill="#4E342E"/>
+  <text x="314"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Media Service</text>
+  <rect x="406"  y="912" width="12" height="12" rx="2" fill="#6A1B9A"/>
+  <text x="424"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Voice &amp; Video / WebRTC</text>
+  <rect x="564"  y="912" width="12" height="12" rx="2" fill="#0277BD"/>
+  <text x="582"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Notifications</text>
+  <rect x="670"  y="912" width="12" height="12" rx="2" fill="#283593"/>
+  <text x="688"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Data Layer</text>
+  <rect x="764"  y="912" width="12" height="12" rx="2" fill="#546E7A"/>
+  <text x="782"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Sistemas Externos</text>
+  <rect x="894"  y="912" width="12" height="12" rx="2" fill="#E65100"/>
+  <text x="912"  y="922" font-size="10" fill="rgba(255,255,255,0.7)">Edge / Borda</text>
+  <rect x="984"  y="912" width="12" height="12" rx="2" fill="#1565C0"/>
+  <text x="1002" y="922" font-size="10" fill="rgba(255,255,255,0.7)">Clientes (Mobile · Web · Desktop)</text>
+
+  <!-- Right side credits -->
+  <text x="1764" y="902" text-anchor="end" font-size="10" fill="rgba(255,255,255,0.5)">WhatsApp Architecture · C4 Model</text>
+  <text x="1764" y="916" text-anchor="end" font-size="10" fill="rgba(255,255,255,0.5)">Erlang/OTP · Signal Protocol · WebRTC · ScyllaDB</text>
+  <text x="1764" y="930" text-anchor="end" font-size="10" fill="rgba(255,255,255,0.4)">Todos os dados criptografados E2E no device</text>
+  <text x="1764" y="944" text-anchor="end" font-size="10" fill="rgba(255,255,255,0.4)">Apresentação de Arquitetura · Março 2026</text>
+
+  <!-- KEY FLOW ANNOTATIONS (numbered call-outs) -->
+  <!-- WSS persistent connection annotation -->
+  <rect x="880" y="192" width="40" height="16" rx="8" fill="#1565C0"/>
+  <text x="900" y="203" text-anchor="middle" font-size="9" fill="white" font-weight="700">WSS</text>
+  <rect x="880" y="730" width="40" height="16" rx="8" fill="#546E7A"/>
+  <text x="900" y="741" text-anchor="middle" font-size="9" fill="white" font-weight="700">EXT</text>
+
+</svg>
