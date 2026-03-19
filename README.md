@@ -53,3 +53,5 @@ URL: https://github.com/mateusartur27/apresentacao-whatsapp
 
 ## Autor
 Mateus Artur Santos
+
+- Rodada automatica de contribuicao #1 para fluxo de PR e issue.
